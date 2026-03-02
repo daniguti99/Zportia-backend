@@ -14,10 +14,6 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-    public Comment create(Comment comment) {
-        return commentRepository.save(comment);
-
-    }
 
 
 }

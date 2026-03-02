@@ -39,8 +39,8 @@ public class User {
     @Column(name = "privado")
     private Boolean isPrivate;
 
-    @Column(name = "esAdmin") // NUEVO CAMPO
-    private Boolean isAdmin;
+    @Column(name = "rol")
+    private String role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Post> posts;
