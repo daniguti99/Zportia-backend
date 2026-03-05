@@ -65,7 +65,7 @@ public class User implements UserDetails {
     // Para la autorización, se asigna un rol al usuario y se devuelve una colección de autoridades basada en ese rol.
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + this.role));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
     }
      // Para la autenticación, el email se utiliza como nombre de usuario y la contraseña se obtiene del campo correspondiente.
     @Override

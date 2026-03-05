@@ -16,6 +16,7 @@ public class JwtUtil {
     //Tiempo de expiración del token (en este caso, 1 hora)
     private final long EXPIRATION_TIME = 1000 * 60 * 60; // 1 hora en milisegundos
 
+    //Metodo privado para obtener la clave de firma a partir de la cadena secreta
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET.getBytes());
     }
@@ -62,7 +63,6 @@ public class JwtUtil {
     private Claims getClaims(String token) {
         //El metodo getClaims utiliza el parser de JJWT para validar la firma del token y
         // extraer las reclamaciones (claims) contenidas en el token JWT.
-        // Si el token es válido, se devuelve el cuerpo de las reclamaciones; de lo contrario, se lanzará una excepción.
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()
